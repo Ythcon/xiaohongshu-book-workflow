@@ -17,6 +17,16 @@
 - 产出标题、卡片文案、发布文案、图片来源说明和结构化清单。
 - 根据发布后的数据复盘封面命题、内容节奏和收藏价值。
 
+## 最终保留的两个 Skill
+
+### [xhs-designer-single-book](skills/xhs-designer-single-book/SKILL.md)
+
+建筑师、设计师或设计理论家的单本书籍工作流。负责锁定书籍论点、挑选 4 个证据案例，并生成 6 张有完整叙事的图卡。
+
+### [xhs-quick-book-cards](skills/xhs-quick-book-cards/SKILL.md)
+
+建筑书籍与建筑杂志的快速图卡工作流。书籍采用 6 页，杂志采用 8 页，重点是快速压缩命题、案例和来源记录。
+
 ## 完整流程
 
 ```text
@@ -82,7 +92,7 @@ output/<内容 slug>/
 └── post.json            # 案例、命题、页序等结构化数据
 ```
 
-仓库中还保留 `generate_*.py` 图卡生成脚本、`fetch_*.py` / `probe_*.py` 研究脚本、`skills/` 内容规范、`automation_agent.py` 流程脚本和 `book_registry.json` 选题登记。
+仓库只保留两套最终 Skill 及其必要的参考文档和验证脚本；书目登记、查重与来源规范作为项目说明材料一并保留。具体书籍的临时抓取脚本、批量生成脚本和下载资料不放在公开仓库中。
 
 ## 我的工作方法
 
@@ -108,4 +118,4 @@ output/<内容 slug>/
 2. 打开 [`book_registry.json`](book_registry.json)，查看选题规模与去重规则。
 3. 打开 [`output/`](output/)，查看预览图、发布文案和图片来源说明。
 4. 打开 [`posts/`](posts/)，查看结构化的案例内容。
-5. 打开 [`AGENT.md`](AGENT.md)，了解自动化流程和安全边界。
+5. 阅读两个 Skill 的 `SKILL.md`，了解建筑大师书籍与建筑杂志的具体执行方式。

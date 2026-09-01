@@ -62,7 +62,8 @@
     {"architect":"伊东丰雄", "title":"Toyo Ito: Blurring Architecture 1971–2005", "slug":"toyo-ito-blurring-architecture", "status":"completed"},
     {"architect":"丹下健三", "title":"Kenzō Tange: Architecture for the World", "slug":"kenzo-tange-architecture-world", "status":"completed"},
     {"architect":"R. M. 辛德勒", "title":"Schindler: An Exploration of Space", "slug":"schindler-exploration-space", "status":"completed"},
-    {"architect":"赫里特·里特费尔德", "title":"Gerrit Rietveld", "slug":"rietveld-furniture-to-architecture", "status":"completed"}
+    {"architect":"赫里特·里特费尔德", "title":"Gerrit Rietveld", "slug":"rietveld-furniture-to-architecture", "status":"completed"},
+    {"architect":"彼得·艾森曼", "title":"Ten Canonical Buildings 1950–2000", "slug":"eisenman-ten-canonical", "status":"completed"}
   ],
   "non_book_series": [
     {"name":"理查德·迈耶五色系列", "slug":"richard-meier-colors", "status":"completed; architect_reserved"},
