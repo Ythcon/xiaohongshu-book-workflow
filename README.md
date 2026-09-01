@@ -40,7 +40,7 @@
 
 ### 2. 研究与图片来源
 
-使用 `fetch_*.py`、`probe_*.py` 等辅助脚本整理书目信息、项目资料和公开图片。图片不只保存文件，还要留下出处、页码、链接或许可证说明，写入每套内容的 `图片来源.md`。
+按照两个 Skill 中的研究与来源规范整理书目信息、项目资料和公开图片。图片不只保存文件，还要留下出处、页码、链接或许可证说明，写入每套内容的 `图片来源.md`。
 
 ### 3. 内容拆解
 
@@ -50,7 +50,7 @@
 
 ### 4. 图卡生成
 
-`generate_*.py` 使用 Python 与 Pillow 批量生成 1242 × 1660 的 3:4 JPG，同时保留 `preview.jpg`、卡片图片和结构化 JSON。
+Skill 自带的 `render_post.py`、`render_utils.py` 和验证脚本使用 Python 与 Pillow 生成 1242 × 1660 的 3:4 JPG，同时保留 `preview.jpg`、卡片图片和结构化 JSON。
 
 ### 5. 质检与发布准备
 
@@ -110,6 +110,6 @@ output/<内容 slug>/
 
 1. 先看本页，了解完整工作方法。
 2. 打开 [`book_registry.json`](book_registry.json)，查看选题规模与去重规则。
-3. 打开 [`output/`](output/)，查看预览图、发布文案和图片来源说明。
-4. 打开 [`posts/`](posts/)，查看结构化的案例内容。
-5. 阅读两个 Skill 的 `SKILL.md`，了解建筑大师书籍与建筑杂志的具体执行方式。
+3. 阅读 [`xhs-designer-single-book`](skills/xhs-designer-single-book/SKILL.md)，了解建筑大师书籍的完整执行方式。
+4. 阅读 [`xhs-quick-book-cards`](skills/xhs-quick-book-cards/SKILL.md)，了解建筑杂志的快速图卡流程。
+5. 查看两个 Skill 目录下的 `references/` 和 `scripts/`，了解来源规范、排版规则与验证方式。
