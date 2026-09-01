@@ -1,0 +1,18 @@
+# Generated media and downloaded research are intentionally excluded from the public portfolio.
+assets/
+output/
+posts/
+tmp/
+__pycache__/
+*.pyc
+.agent-state.json
+automation.config.json
+.agents/
+.codex/
+.skill-test/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.log

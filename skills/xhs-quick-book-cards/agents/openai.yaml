@@ -1,0 +1,4 @@
+interface:
+  display_name: "小红书建筑书与杂志图文快制"
+  short_description: "快速生成六页书籍或八页杂志图文及可追溯图源记录"
+  default_prompt: "Use $xhs-quick-book-cards to create a sourced Xiaohongshu architecture book or magazine post with publish copy."
