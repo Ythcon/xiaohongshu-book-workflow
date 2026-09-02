@@ -36,6 +36,10 @@ def main() -> None:
             "06": {"layout_rationale": "", "changed_variables": []},
         },
         "transferable_methods": ["", "", ""],
+        "publish_selection": {
+            "recommended_cards": [],
+            "note": "从完整案例包中选择少量卡片发布；未选案例仍保留在归档中。",
+        },
         "sources": [],
     }
     post_json = output / "post.json"
@@ -44,7 +48,10 @@ def main() -> None:
 
     publish = output / "发布文案.md"
     if not publish.exists():
-        publish.write_text("# 标题\n\n# 正文\n\n# 标签\n", encoding="utf-8")
+        publish.write_text(
+            "# 标题\n\n# 正文\n\n# 标签\n\n# 建议上传组合\n\n[从完整案例包中选择少量卡片；未选内容继续归档]\n",
+            encoding="utf-8",
+        )
 
     sources = output / "图片来源.md"
     if not sources.exists():

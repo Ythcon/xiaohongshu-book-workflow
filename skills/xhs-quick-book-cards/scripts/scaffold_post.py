@@ -71,6 +71,10 @@ def main() -> None:
             "concepts": ["概念一", "概念二", "概念三"],
             "takeaways": ["结论一", "结论二", "结论三"],
         },
+        "publish_selection": {
+            "recommended_cards": [],
+            "note": "从完整案例包中选择少量卡片发布；未选案例仍保留在归档中。",
+        },
     }
     write_new(
         project / "post.json",
@@ -109,6 +113,10 @@ def main() -> None:
 ## 版本与事实来源
 
 [出版社、年份、ISBN、书目页和案例事实来源]
+
+## 建议上传组合
+
+[从完整案例包中选择少量卡片；未选内容继续归档]
 """
     write_new(output / "发布文案.md", publish, args.force)
 

@@ -1,11 +1,18 @@
 ---
 name: xhs-quick-book-cards
-description: Rapidly create production-ready Xiaohongshu posts for architecture, urbanism, design, and art books or magazines. Use six cards for books and eight cards for magazine issues, with 3:4 JPG cards, preview, publish copy, and image-source records. Use when Codex must turn a book or magazine issue, thesis, articles, cases, cover, and sourced images into a coherent Chinese graphic post; batch-generate notes; or revise an existing package while minimizing research and prompt tokens.
+description: Rapidly create sourced Xiaohongshu packages for architecture, urbanism, design, and art books or magazines. Use six cards for books and eight cards for magazine issues, with 3:4 JPG cards, preview, publish copy, and image-source records. Build a complete case archive first, then recommend a smaller upload selection; use when turning a book or issue into a coherent graphic post or revising an existing package.
 ---
 
 # 小红书建筑书与杂志图文快制
 
-用“一个命题 + 一种视觉操作 + 一条证据链”完成可发布图文。优先复用素材、来源记录和已有生成脚本，不重新研究已核验的信息。
+用“一个命题 + 一种视觉操作 + 一条证据链”完成可发布图文。先形成完整、可追溯的案例包，再从中选择少量内容上传；优先复用素材、来源记录和已有生成脚本，不重新研究已核验的信息。
+
+## 项目工作模式
+
+- 完整包负责保存研究结论、全部案例、卡片顺序、来源和生成配置，是后续复用与复盘的唯一依据。
+- 发布组合单独标记在 `post.json` 的 `publish_selection` 或 `发布文案.md` 中。上传时只选最能支撑主线的几个案例即可，不必一次上传整套，也不要因为未上传而删除归档内容。
+- 自动化只负责结构化整理、起草、渲染和检查；事实、版权、文案与最终上传集合必须人工确认。
+- `posts/`、`assets/`、`output/` 和具体项目临时脚本属于生产工作区；公开仓库只保留两个最终 Skill、必要参考文档、脚本、登记资料和少量预览图。
 
 ## 类型路由
 
@@ -15,15 +22,15 @@ description: Rapidly create production-ready Xiaohongshu posts for architecture,
 
 ## 快速路径
 
-1. 检查当前项目中的书封、案例图、`manifest.json`、`图片来源.md`、发布文案和生成脚本。
+1. 先查 `book_registry.json` 与 `已做书单.md`，再检查当前项目中的书封、案例图、`manifest.json`、`图片来源.md`、发布文案和生成脚本。
 2. 缺素材时只补齐：核验封面、1 张可选封面背景；书籍补4张案例图，杂志补6张文章或案例图。01与末页不预设固定构图；总结页可纯排版，也可使用与总结命题直接相关的合法素材。AI背景不能含文字或伪造建筑。
-3. 把全书压成一句可争论的核心命题；禁止只写“作者 × 书名”。
+3. 把全书或单期内容压成一句可争论的核心命题；禁止只写“作者 × 书名”或“刊名 × 期号”。
 4. 选择一个系统：
    - `signage`：城市、传播、符号、速度、日常文化。
    - `anchoring`：场地、材料、光、身体、关系。
    - `event-grid`：概念、规则、程序、运动、事件。
 5. 若项目已有相近生成器，复制最接近的脚本并只改内容配置。否则运行 `scripts/scaffold_post.py`，填好 `post.json` 后运行 `scripts/render_post.py`。
-6. 书籍生成`01.jpg`—`06.jpg`；杂志生成`01.jpg`—`08.jpg`；同时生成`preview.jpg`、`发布文案.md`、`图片来源.md`。
+6. 书籍生成`01.jpg`—`06.jpg`；杂志生成`01.jpg`—`08.jpg`；同时生成`preview.jpg`、`发布文案.md`、`图片来源.md`。在文案或 `post.json` 中标出建议上传的少量卡片 / 案例。
 7. 运行 `scripts/validate_post.py <成品目录>`；再人工查看 `preview.jpg`。
 
 ## 固定规格（非固定版式）
@@ -48,7 +55,7 @@ description: Rapidly create production-ready Xiaohongshu posts for architecture,
 
 ## 对外内容规则
 
-- 每页主标题必须直接输出一个建筑、空间或设计观点，让粉丝无需理解整理过程也能获得知识。
+- 每页主标题必须直接输出一个建筑、空间或设计观点，让读者无需理解整理过程也能获得知识。
 - 优先写：场地如何生成形式、程序如何组织空间、动线如何连接活动、材料或光线如何影响体验、公共空间如何成立。
 - 禁止把整理动作、编辑策略、研究方法、配图原则或出处规范写成成品观点，例如“建立杂志判断轴线”“先找编辑主线”“图片承担叙事”。这些只进入内部文档。
 - 08总结必须归纳本期可迁移的建筑与设计概念，不总结制作流程。

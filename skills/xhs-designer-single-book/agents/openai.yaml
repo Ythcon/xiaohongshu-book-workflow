@@ -1,6 +1,6 @@
 interface:
   display_name: "小红书设计师单书图文"
-  short_description: "把一位设计师的一本理论向书籍整理成六页可直接发布的小红书图文包"
-  default_prompt: "Use $xhs-designer-single-book to turn one verified book by or about one designer into a sourced six-card Xiaohongshu post."
+  short_description: "把一本设计理论书整理成完整案例包并给出少量发布组合"
+  default_prompt: "Use $xhs-designer-single-book to turn one verified book by or about one designer into a sourced six-card package with a recommended small publish selection."
 policy:
   allow_implicit_invocation: true

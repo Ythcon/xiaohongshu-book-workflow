@@ -1,11 +1,18 @@
 ---
 name: xhs-designer-single-book
-description: Create or revise one production-ready six-card Xiaohongshu post about one verified book by or about one designer, architect, artist, or design theorist. Use for requests that name a designer and one book, ask to select that designer's theory-oriented book, or require sourced Chinese editorial copy, 3:4 JPG cards, preview, and image credits. This skill is deliberately limited to a single book and excludes magazines, multi-book comparisons, and generic batch layouts.
+description: Create or revise one sourced six-card Xiaohongshu package about one verified book by or about one designer, architect, artist, or design theorist. Use when a request names one designer and one book, or needs Chinese editorial copy, 3:4 JPG cards, a preview, and image credits. Build a complete case archive first, then mark a smaller publishable selection; exclude magazines, multi-book comparisons, and generic batch layouts.
 ---
 
 # Xiaohongshu Designer Single Book
 
-Turn one designer's one book into a coherent Chinese visual argument, not a summary slideshow. Deliver a sourced six-card package quickly while keeping the opening and closing cards specific to the book.
+Turn one designer's one book into a coherent Chinese visual argument, not a summary slideshow. Deliver a sourced six-card package while keeping the opening and closing cards specific to the book. The package is the reusable source of truth; the final upload can use only a few of its cases.
+
+## Project Operating Model
+
+- Build the complete package before choosing what to publish: retain four distinct evidence cases, their source records, and the full card sequence.
+- Add a `publish_selection` note to `post.json` or `发布文案.md` when useful. It identifies the few cards / cases that best carry the argument; leaving a case out of one upload does not delete it from the archive.
+- Automation may structure research, draft copy, render cards, and run checks. A person must confirm facts, image rights, wording, and the final upload set.
+- Keep generated posts, downloaded assets, and temporary project scripts in the working area. This public repository contains the reusable Skill and its supporting tools, not every production asset.
 
 ## Hard Scope
 
@@ -26,13 +33,15 @@ preview.jpg
 post.json
 ```
 
+`post.json` is the source of truth for the book identity, thesis, cases, page order, end-card rationale, sources, and (optionally) `publish_selection`.
+
 Cards must be 1242 x 1660 px, RGB, 3:4 JPG, quality 95. Use Chinese text rendered by code; never ask an image model to render readable card text.
 
 ## Workflow
 
 ### 1. Establish the Book Argument
 
-Research only enough to lock:
+Before researching, check the project's book registry and reuse any already-verified records. Research only enough to lock:
 
 1. exact bibliographic identity and cover;
 2. one debatable thesis that can be explained in one Chinese sentence;
@@ -88,7 +97,7 @@ python scripts/scaffold_single_book.py <output-directory> --designer "..." --boo
 
 Create a project-specific Pillow renderer in the output or working directory. Import shared geometry, type, crop, fitting, and preview helpers from `scripts/render_utils.py`; do not turn that utility into a fixed card template. Derive the palette and graphic behavior from the book's content, not superficial imitation of the designer.
 
-Write `发布文案.md` with a title around 20 Chinese characters, 300–500 Chinese characters of body copy, and 6–10 useful tags. Keep the argument clear enough to publish without the images.
+Write `发布文案.md` with a title around 20 Chinese characters, 300–500 Chinese characters of body copy, 6–10 useful tags, and (when the archive has extra cases) a short recommended upload selection. Keep the argument clear enough to publish without the images.
 
 ### 6. Verify
 
@@ -104,7 +113,8 @@ Then inspect `preview.jpg` at normal viewing size and check:
 - all four evidence images are distinct and correctly described;
 - the cover is genuine and not distorted;
 - 01 and 06 visibly differ in structure from one another and from the previous package;
-- attribution, rights status, paraphrase, and editorial inference are explicit.
+- attribution, rights status, paraphrase, and editorial inference are explicit;
+- the complete case archive is intact and any smaller upload selection is clearly marked.
 
 Fix all errors before delivery. Treat validator warnings as editorial review items, not permission to skip them.
 

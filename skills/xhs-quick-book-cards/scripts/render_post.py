@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a six-card Xiaohongshu architecture-book post from post.json."""
+"""Render a six-card book or eight-card magazine post from post.json."""
 
 from __future__ import annotations
 

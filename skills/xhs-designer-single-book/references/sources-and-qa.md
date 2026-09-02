@@ -23,6 +23,10 @@ filename | depicted content | author/institution | source URL | license/copyrigh
 
 If reuse permission is unclear, state that plainly. Do not convert “source found” into “free to reuse.” Keep editorial sourcing notes separate from rights claims.
 
+## Complete Package and Publish Selection
+
+Keep the complete four-case evidence chain in the working package, even when the final upload uses only a few cards. Record a recommended subset in `post.json.publish_selection` or in `发布文案.md`; omitted cases remain available for a later post or for editorial reference.
+
 ## Covers
 
 Use a verified edition cover, preferably from the publisher, author/foundation, library catalog, or bookseller page that names the edition. Do not redraw the title, replace cover typography, invent a cover, or silently use a different edition. Scaling and cropping outer blank margins are acceptable; distortion is not.
